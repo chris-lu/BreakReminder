@@ -1,0 +1,15 @@
+## Title: Break Reminder
+## Description: Reminds you (and @Iriidsuke) to have a break from time to time ! 
+## Author: @mouton
+## AddOnVersion: 0.0.4
+## APIVersion: 101036
+## SavedVariables: BreakReminderVariables
+## DependsOn: LibAddonMenu-2.0
+
+
+## Core
+lang/strings.lua
+lang/$(language).lua
+
+BreakReminder.lua
+BreakReminderSettings.lua
