@@ -26,8 +26,15 @@ local strings = {
 
     BREAKREMINDER_BREAK_TITLE = "It's time for a break!",
     BREAKREMINDER_BREAK_TEXT = "You should have a drink, a walk, or a pee!",
-    BREAKREMINDER_BREAK_START = "Will remind you to have a break in <<1>> minutes!"
+    BREAKREMINDER_BREAK_START = "Will remind you to have a break in <<1>> minutes!",
 
+    MOUTON_AUTHOR_FEEDBACK_MAIL = "In-game mail feedback",
+    MOUTON_AUTHOR_FEEDBACK_MAIL_HEADER = "Feedback for <<1>> (<<2>>)",
+    MOUTON_AUTHOR_FEEDBACK_ESOUI = "ESOUI comments",
+    MOUTON_AUTHOR_DONATE_GOLD = "Donation in gold",
+    MOUTON_AUTHOR_DONATE_GOLD_HEADER = "Donation for <<1>>",
+    MOUTON_AUTHOR_DONATE_ESOUI = "ESOUI donation page",
+    MOUTON_AUTHOR_DONATE_CROWNS = "Donation in crowns"
 }
 
 for stringId, stringValue in pairs(strings) do

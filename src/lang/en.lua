@@ -32,7 +32,12 @@ SafeAddString(BREAKREMINDER_BREAK_TITLE, "It's time for a break!", 1)
 SafeAddString(BREAKREMINDER_BREAK_TEXT, "You should have a drink, a walk, or a pee!", 1)
 SafeAddString(BREAKREMINDER_BREAK_START, "Will remind you to have a break in <<1>> minutes!", 1)
 
- = 
-   = ""
+SafeAddString(MOUTON_AUTHOR_FEEDBACK_MAIL, "In-game mail feedback", 1)
+SafeAddString(MOUTON_AUTHOR_FEEDBACK_MAIL_HEADER, "Feedback for <<1>> (<<2>>)", 1)
+SafeAddString(MOUTON_AUTHOR_FEEDBACK_ESOUI, "ESOUI comments", 1)
+SafeAddString(MOUTON_AUTHOR_DONATE_GOLD, "Donation in gold", 1)
+SafeAddString(MOUTON_AUTHOR_DONATE_GOLD_HEADER, "Donation for <<1>>", 1)
+SafeAddString(MOUTON_AUTHOR_DONATE_ESOUI, "ESOUI donation page", 1)
+SafeAddString(MOUTON_AUTHOR_DONATE_CROWNS, "Donation in crowns", 1)
 
 --]]

@@ -1,4 +1,3 @@
-
 SafeAddString(BREAKREMINDER_OPTION_DESCRIPTION, "Vous rapelle (et pour @Iriidsuke aussi) de prendre une pause de temps en temps.", 1) -- Iriidsuke
 SafeAddString(BREAKREMINDER_OPTION_ACCOUNT_WIDE, "Utiliser des paramètres globaux pour le compte", 1)
 SafeAddString(BREAKREMINDER_OPTION_ACCOUNT_WIDE_TOOLTIP, "Changer entre les profils locaux et globaux rechargera l'interface.", 1)
@@ -26,3 +25,11 @@ SafeAddString(BREAKREMINDER_NOTIF_TOO_MUCH, "Vous devez supprimer d'autres rappe
 SafeAddString(BREAKREMINDER_BREAK_TITLE, "Une petite pause ?", 1)
 SafeAddString(BREAKREMINDER_BREAK_TEXT, "Vous devriez vous hydrater, vous dégourdir les jambes ou faire un petit pipi !", 1)
 SafeAddString(BREAKREMINDER_BREAK_START, "Rappel de pause dans <<1>> minutes !", 1)
+
+SafeAddString(MOUTON_AUTHOR_FEEDBACK_MAIL, "Commentaires par messagerie", 1)
+SafeAddString(MOUTON_AUTHOR_FEEDBACK_MAIL_HEADER, "Commentaires pour <<1>> (<<2>>)", 1)
+SafeAddString(MOUTON_AUTHOR_FEEDBACK_ESOUI, "Commentaires sur ESOUI", 1)
+SafeAddString(MOUTON_AUTHOR_DONATE_GOLD, "Don en pièces d'or", 1)
+SafeAddString(MOUTON_AUTHOR_DONATE_GOLD_HEADER, "Remerciement pour <<1>>", 1)
+SafeAddString(MOUTON_AUTHOR_DONATE_ESOUI, "Page sur ESOUI", 1)
+SafeAddString(MOUTON_AUTHOR_DONATE_CROWNS, "Don en couronnes", 1)

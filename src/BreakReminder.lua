@@ -4,8 +4,10 @@ BreakReminder = {
         type = "panel",
         name = "BreakReminder",
         registerForRefresh = true,
-        author = "mouton",
-        version = "0.1.0",
+        author = "|c0cccc0@mouton|r",
+        recipient = "@mouton",
+        version = "0.2.0",
+        website = "https://www.esoui.com/downloads/info3431-BreakReminderTimerampMemos.html",
         max_reminders = 10
     },
     command = "/break",
@@ -98,7 +100,7 @@ function BR.TriggerReminder(event, message)
         CENTER_SCREEN_ANNOUNCE:AddMessageWithParams(messageParams)
     else
         -- Try again later if player is in a fight
-        zo_callLater(BR.TriggerReminder, 10000);
+        zo_callLater(function () BR.TriggerReminder(event, message) end, 10000);
     end
 end
 
@@ -119,7 +121,7 @@ function BR.TriggerTimer(event)
         BR.StartTimer()
     else
         -- Try again later if player is in a fight
-        zo_callLater(BR.TriggerTimer, 10000);
+        zo_callLater(function () BR.TriggerTimer(event) end, 10000);
     end
 end
 

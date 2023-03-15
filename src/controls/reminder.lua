@@ -19,7 +19,6 @@ local wm = WINDOW_MANAGER
 
 
 local function UpdateDisabled(control)
- 
     local disable
     disable = control.data.getFunc() == nil
     if disable then
@@ -61,7 +60,7 @@ function LAMCreateControl.reminder(parent, reminderData, controlName)
             local i = reminderData.getFunc()
             return i and i.note or ""
          end,
-        setFunc = function(note) 
+        setFunc = function(note)
             local i = reminderData.getFunc()
             i.note = note
          end,
