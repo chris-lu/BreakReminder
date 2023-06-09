@@ -6,7 +6,7 @@ BreakReminder = {
         registerForRefresh = true,
         author = "|c0cccc0@mouton|r",
         recipient = "@mouton",
-        version = "0.2.0",
+        version = "1.0.0",
         website = "https://www.esoui.com/downloads/info3431-BreakReminderTimerampMemos.html",
         max_reminders = 10
     },
