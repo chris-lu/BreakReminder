@@ -1,8 +1,8 @@
 ## Title: Break Reminder
 ## Description: Reminds you (and @Iriidsuke) to have a break from time to time ! 
 ## Author: @mouton
-## AddOnVersion: 1.0.0
-## APIVersion: 101038
+## AddOnVersion: 1.0.1
+## APIVersion: 101039
 ## SavedVariables: BreakReminderVariables
 ## DependsOn: LibAddonMenu-2.0
 
