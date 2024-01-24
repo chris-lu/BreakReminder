@@ -19,6 +19,7 @@ local strings = {
     BREAKREMINDER_DIALOG_INSTRUCTION = "Define a reminder in ",
     BREAKREMINDER_DIALOG_IN = "In <<1>> minutes:",
     BREAKREMINDER_DIALOG_MINUTES = "minutes",
+    BREAKREMINDER_DIALOG_REMEMBER = "Remember at next login",
     BREAKREMINDER_NOTIF_REMINDER_ADDED = "Reminder added.",
     BREAKREMINDER_NOTIF_IN = "Reminder in <<1>> minutes : <<2>>",
     BREAKREMINDER_NOTIF_UNKNOWN = "Didn't you forget something?",

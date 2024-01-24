@@ -31,8 +31,8 @@ local function UpdateDisabled(control)
         control:SetHidden(false)
     end
     -- control.data.disabled = disable
-    --control.reminder:SetEditEnabled(not disable)
-    ---control.reminder:UpdateDisabled()
+    -- control.reminder:SetEditEnabled(not disable)
+    -- control.reminder:UpdateDisabled()
 end
 
 local function UpdateValue(control, forceDefault, value)

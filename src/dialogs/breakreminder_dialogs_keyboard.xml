@@ -47,6 +47,16 @@
                     </Controls>
                 </Backdrop>
 
+                <Control name="$(parent)Remember" resizeToFitDescendents="true">
+                    <Anchor point="TOPLEFT" relativeTo="$(parent)Note" relativePoint="BOTTOMLEFT" offsetY="10" />
+                    <Controls>
+                        <Button name="$(parent)CheckBox" inherits="ZO_CheckButton">
+                            <Anchor point="TOPLEFT" relativeTo="$(parent)Remember" relativePoint="TOPLEFT" offsetX="5" offsetY="4" />
+                            <OnInitialized> ZO_CheckButton_SetLabelText(self, zo_strformat(BREAKREMINDER_DIALOG_REMEMBER)) </OnInitialized>
+                        </Button>
+                    </Controls>
+                </Control>
+
                 <Control name="$(parent)Cancel" inherits="ZO_CustomDialogButton"/>
                 <Control name="$(parent)Save" inherits="ZO_CustomDialogButton"/>
             </Controls>

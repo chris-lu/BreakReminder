@@ -3,6 +3,8 @@ local BR = BreakReminder
 local function EditNoteDialogSetup(dialog, data)
     GetControl(dialog, "TimerEdit"):SetText(data and data.delay or 10)
     GetControl(dialog, "NoteEdit"):SetText(data and data.note or "")
+    -- When nil or true, checked. If false, unchecked
+    ZO_CheckButton_SetCheckState(GetControl(dialog, "RememberCheckBox"), not (data and type(data.remember) == 'boolean' and not data.remember))
 end
 
 function BreakReminder_EditDialog_OnItilialized(self)
@@ -22,7 +24,8 @@ function BreakReminder_EditDialog_OnItilialized(self)
                     callback = function(dialog)
                         local delay = tonumber(GetControl(dialog, "TimerEdit"):GetText()) or 10
                         local note = GetControl(dialog, "NoteEdit"):GetText()
-                        BR.AddReminder(delay, note)
+                        local remember = ZO_CheckButton_IsChecked(GetControl(dialog, "RememberCheckBox"))
+                        BR.AddReminder(delay, note, remember)
                     end,
                 },
                 {

@@ -6,7 +6,7 @@ BreakReminder = {
         registerForRefresh = true,
         author = "|c0cccc0@mouton|r",
         recipient = "@mouton",
-        version = "1.0.2",
+        version = "1.1.0",
         website = "https://www.esoui.com/downloads/info3431-BreakReminderTimerampMemos.html",
         max_reminders = 10
     },
@@ -98,6 +98,8 @@ function BR.TriggerReminder(event, message)
         -- messageParams:SetIconData(icon, COLLECTIBLE_EMERGENCY_BACKGROUND)
         messageParams:SetLifespanMS(settings.notificationDuration * 1000)
         CENTER_SCREEN_ANNOUNCE:AddMessageWithParams(messageParams)
+        CHAT_SYSTEM:Maximize()
+        CHAT_SYSTEM:AddMessage(zo_strformat(BREAKREMINDER_DIALOG_TITLE) .. ': ' .. zo_strformat(message ~= "" and message or BREAKREMINDER_NOTIF_UNKNOWN))
     else
         -- Try again later if player is in a fight
         zo_callLater(function () BR.TriggerReminder(event, message) end, 10000);
@@ -117,6 +119,8 @@ function BR.TriggerTimer(event)
         -- messageParams:SetIconData(icon, COLLECTIBLE_EMERGENCY_BACKGROUND)
         messageParams:SetLifespanMS(settings.notificationDuration * 1000)
         CENTER_SCREEN_ANNOUNCE:AddMessageWithParams(messageParams)
+        CHAT_SYSTEM:Maximize()
+        CHAT_SYSTEM:AddMessage(zo_strformat(BREAKREMINDER_BREAK_TITLE) .. ': ' .. zo_strformat(BREAKREMINDER_BREAK_TEXT) )
 
         BR.StartTimer()
     else
@@ -172,12 +176,18 @@ function BR.SetupReminders()
     end
 
     for k, r in pairs(settings.reminders) do
-        -- Reminder is passed but still there?
-        if r.nextNotification <= BR.GetTime() then
-            BR.TriggerReminder(r.note)
-            settings.reminders[k] = nil
+        if r.remember then
+            -- Reminder is passed but still there?
+            if r.nextNotification <= BR.GetTime() then
+                BR.TriggerReminder(r.note)
+                settings.reminders[k] = nil
+            else
+                if r.remember then
+                    BR.AddReminderCallback(r)
+                end
+            end
         else
-            BR.AddReminderCallback(r)
+            settings.reminders[k] = nil
         end
     end
 end
@@ -214,12 +224,12 @@ function BR.RemoveReminder(reminder)
     end
 end
 
-function BR.AddReminder(delay, note)
+function BR.AddReminder(delay, note, remember)
     local settings = BR.GetSettings()
     if len(settings.reminders) < BR.options.max_reminders then
         local settings = BR.GetSettings()
         math.randomseed(os.time())
-        local reminder = { id = uuid(), note = note, delay = delay, nextNotification = BR.GetTime() + delay * 60 }
+        local reminder = { id = uuid(), note = note, delay = delay, nextNotification = BR.GetTime() + delay * 60, remember = remember }
         settings.reminders[reminder.id] = reminder
         BR.AddReminderCallback(reminder)
         BR.RefreshSettings()
